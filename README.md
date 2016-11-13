@@ -12,20 +12,20 @@ An OTH (Online Treasure Hunt) app based on Python/Django. It is forked from [thi
 - A start page with rules, and a finish page for the users who complete the OTH.
 
 ## Instructions
-1. Set up a virtual environment and switch to it. (Optional, but recommended.) Following command can be used with `virtualenv` and `virtualenvwrapper` installed.
-  ```bash
+1. Set up a virtual environment and switch to it. (Optional, but recommended.) Following command can be used with `virtualenv` and `virtualenvwrapper` installed.<br>
+  ```
   $ mkvirtualenv oth
   ```
-2. Install development or production dependencies, based on the environment.
-  ```bash
+2. Install development or production dependencies, based on the environment.<br>
+  ```
   $ pip install -r [ requirements-dev.txt | requirements-prod.txt]
   ```
-3. Create super-user for Django admin site.
-  ```bash
+3. Create super-user for Django admin site.<br>
+  ```
   $ python manage.py createsuperuser
   ```
-4. Run the app locally
-  ```bash
+4. Run the app locally<br>
+  ```
   $ python manage.py runserver
   ```
 5. Open `localhost:8000/admin` and login using previously generated credentials to add questions.
