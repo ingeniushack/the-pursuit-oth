@@ -1,5 +1,5 @@
 # The Pursuit OTH
-An OTH (Online Treasure Hunt) app based on Python/Django. It is forked from the [this](https://github.com/code-haven/Django-treasurehunt-demo) project.
+An OTH (Online Treasure Hunt) app based on Python/Django. It is forked from [this](https://github.com/code-haven/Django-treasurehunt-demo) project. It was used to host The Pursuit 2016 organised by [PESITSouth ACM](http://pesitsouthacm.org), that saw participation from over 400 users from 20+ countries.
 
 ## Features
 - Any number of questions can be added using a web-based GUI (Django admin), no coding required.
@@ -13,22 +13,25 @@ An OTH (Online Treasure Hunt) app based on Python/Django. It is forked from the 
 
 ## Instructions
 1. Set up a virtual environment and switch to it. (Optional, but recommended.) Following command can be used with `virtualenv` and `virtualenvwrapper` installed.
-```bash
-$ mkvirtualenv oth
-```
+  ```bash
+  $ mkvirtualenv oth
+  ```
 2. Install development or production dependencies, based on the environment.
-```bash
-$ pip install -r [ requirements-dev.txt | requirements-prod.txt]
-```
+  ```bash
+  $ pip install -r [ requirements-dev.txt | requirements-prod.txt]
+  ```
 3. Create super-user for Django admin site.
-```bash
-$ python manage.py createsuperuser
-```
+  ```bash
+  $ python manage.py createsuperuser
+  ```
 4. Run the app locally
-```bash
-$ python manage.py runserver
-```
+  ```bash
+  $ python manage.py runserver
+  ```
 5. Open `localhost:8000/admin` and login using previously generated credentials to add questions.
 
-## Credits
+### Credits
 Thanks to [code-haven](https://github.com/code-haven) for the original project.
+
+### Author
+Built by [Amjad Ali](https://github.com/amjd) for [inGenius 2016](https://github.com/ingeniushack) on behalf of [PESITSouth ACM](https://github.com/pesitsouthacm).
