@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Congratulations! {% endblock %}
+
+{% block navigation %}
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="{% url 'play' %}">Play</a></li>
+        <li><a href="{% url 'display_leaderboard' %}">Leaderboard</a></li>
+        <li><a href="http://ingeniushack.com" target="_blank">inGenius2016</a></li>
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1 align="center">Congrats!</h1>
+        <br>
+        <div>
+            <h3 align="justify">Kudos <strong>{{ request.user.username }}</strong> for completing The Pursuit! Thanks for taking part and we hope to see you next time. But before you leave we urge you to register for inGenius 2016. You'll have an even better experience there!</h3>
+            <br>
+            <div class="text-center">
+                <a href="http://ingeniushack.com/register" target="_blank" class="btn btn-primary btn-lg">Register</a>
+            </div>
+            <br>
+            <img class='img-responsive' src="{% static 'images/fireworks.jpg' %}"><br>
+            
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Leaderboard {% endblock %}
+
+{% block navigation %}
+        <li><a href="/">Home</a></li>
+        <li><a href="{% url 'play' %}">Play</a></li>
+        <li class="active"><a href="{% url 'display_leaderboard' %}">Leaderboard</a></li>
+        <li><a href="http://ingeniushack.com" target="_blank">inGenius2016</a></li>
+{% endblock %}
+
+{% block content %}
+        <h1 align="center">Leaderboard</h1><br>
+            <p style="margin-bottom: 1em;">Note: <img src="{% static 'images/completed.png' %}" /> indicates that the user completed the OTH. </p>
+            <table class="table table-bordered">
+                <col style="width: 5%;">
+                <col style="width: auto;">
+                <col style="width: auto;">
+                <col style="width: 25%;">
+
+                <thead>
+                    <tr><th>Rank</th><th>Username</th><th>Level</th><th>Time reached</th></tr>
+                </thead>
+                {% for user in users %}
+                    <tr><td>{{ user.0 }}</td><td>{{ user.1.user.username }}
+                    {% if user.1.completed %}
+                    <img src="{% static 'images/completed.png' %}" alt="Completed OTH" />
+                    {% endif %}
+                    </td><td>{{ user.1.current_level }}</td><td>{{ user.1.updated_at | date:"M j, h:i:s A" }}</td></tr>
+                {% endfor %}
+            </table>
+            <small>Icon made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a></small>
+{% endblock %}

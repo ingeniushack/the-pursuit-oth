@@ -1,0 +1,4 @@
+Django==1.10
+django-bootstrap3==7.0.1
+django-registration==2.1.2
+Pillow==3.3.1

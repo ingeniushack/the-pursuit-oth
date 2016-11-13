@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Level - {{ level_object.level_number }} {% endblock %}
+
+{% block navigation %}
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="{% url 'play' %}">Play</a></li>
+        <li><a href="{% url 'display_leaderboard' %}">Leaderboard</a></li>
+        <li><a href="http://ingeniushack.com" target="_blank">inGenius2016</a></li>
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1 align="center">Level - {{ level_object.level_number }}</h1>
+        <br>
+        <div>
+            {% if level_object.text %}
+            <h3>{{ level_object.text }}</h3><br><br>
+            {% endif %}
+
+            {% if level_object.image %}
+            <img class='img-responsive' src='{{ level_object.image.url }}'><br><br>
+            {% endif %}
+
+            {% if level_object.hidden_text %}
+            <!--
+            You prying fruitcake! :P Here's your hint:
+            {{ level_object.hidden_text }}
+            -->
+            {% endif %}
+
+            <form method="post"> {% csrf_token %}
+                <div class="form-inline" align="center">
+                  <label>Enter Answer</label>
+                  <input type="text" name="answer" class="form-control"/>
+                    <button type="submit" class="btn btn-primary form-control">Submit</button>
+               </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
